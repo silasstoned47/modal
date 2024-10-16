@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Préstamo Rápido - Rediseño Innovador</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta property="twitter:card" content="summary_large_image">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11360421424"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11360421424');
+</script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      background-color: #F1F4F9;
+      font-family: 'Arial', sans-serif;
+    }
+    .home-container {
+      background: #FFFFFF;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      max-width: 500px;
+      width: 90%;
+      animation: fadeInUp 1s ease, bounceIn 1.5s ease;
+      position: relative;
+    }
+    .bank-balance {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #3AB57C;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      animation: balanceChange 3s ease-in-out infinite;
+    }
+    .home-image {
+      max-width: 130px;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease forwards;
+    }
+    .home-text {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: bold;
+      animation: fadeIn 1.2s ease forwards;
+    }
+    .home-text01 {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+      animation: fadeIn 1.4s ease forwards;
+    }
+    .home-image1 {
+      max-width: 120px;
+      margin: 0 auto 25px auto;
+      display: block;
+    }
+    .home-link.button {
+      display: block;
+      background: linear-gradient(90deg, #3AB57C, #47C2A4);
+      color: #fff;
+      padding: 15px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin: 0 auto;
+      animation: fadeIn 1.8s ease forwards;
+    }
+    .home-link.button:hover {
+      background: linear-gradient(90deg, #47C2A4, #3AB57C);
+    }
+    .no-interest {
+      font-size: 12px;
+      color: #0073E6;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-top: 5px;
+      display: block;
+      animation: fadeIn 2s ease forwards;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      60% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes balanceChange {
+      0%, 100% {
+        content: "Saldo: $1,000.00";
+      }
+      50% {
+        content: "Saldo: $1,500.00";
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="home-container">
+  <div class="bank-balance" id="bank-balance">
+    Saldo: $1,000.00
+  </div>
+  <img
+    src="https://quiz.finctime.com.br/img/logo.svg"
+    alt="logo"
+    class="home-image"
+  />
+  <h1 class="home-text">
+    Obtenga su préstamo en minutos, sin complicaciones
+  </h1>
+  <span class="home-text01">Haga clic en continuar para descubrir el monto que puede ser aprobado para usted al instante.</span><br><br>
+  
+  <img
+    src="https://static.vecteezy.com/system/resources/previews/011/107/354/original/money-3d-icon-illustration-png.png"
+    alt="logo secundario"
+    class="home-image1"
+  />
+  
+  <a
+    class="home-link button"
+    id="primary-link" 
+    onclick="handleButtonClick()"
+  >
+    Obtener mi préstamo ahora ➞
+  </a>
+  
+  <a  
+    class="no-interest" 
+    id="secondary-link" 
+    onclick="handleButtonClick()"
+  >
+    Estoy interesado en aprender más
+  </a>
+  <br>
+</div>
+
+<script>
+  function handleButtonClick() {
+    // Obter os parâmetros UTM da URL atual
+    const urlParams = new URLSearchParams(window.location.search);
+    const utm_medium = urlParams.get('utm_medium') || "";
+    const utm_source = urlParams.get('utm_source') || "";
+    const utm_campaign = urlParams.get('utm_campaign') || "";
+    const utm_content = urlParams.get('utm_content') || "";
+
+    // Montar a URL com os parâmetros UTM
+    let redirectUrl = "https://es.finctime.com.br/lp/banco-bradesco-landing-page";
+    redirectUrl += `?utm_medium=${utm_medium}&utm_source=${utm_source}&utm_campaign=${utm_campaign}&utm_content=${utm_content}`;
+
+    // Disparar o evento do Pixel do Google Ads
+    gtag('event', 'conversion', {
+      'send_to': 'AW-11411610087/ad5bCLfR188ZEOezvcEq',
+      'event_callback': function () {
+        // Redirecionar após o evento do pixel ser disparado
+        window.location.href = redirectUrl;
+      }
+    });
+  }
+
+  // Simulate bank balance changes
+  let balanceElement = document.getElementById('bank-balance');
+  let balance = 1000;
+  setInterval(() => {
+    balance += Math.floor(Math.random() * 100) + 50;
+    balanceElement.innerText = `Saldo: $${balance.toFixed(2)}`;
+  }, 3000);
+</script>
+
+</body>
+</html>
